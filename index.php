@@ -27,10 +27,6 @@
       
     ?>
     <table>
-<!--       <tr>
-        <td>Inicio</td>
-        <td>Descripcion</td>
-      </tr> -->
       <?php foreach($registros as $tarea): ?>
 
       <tr>

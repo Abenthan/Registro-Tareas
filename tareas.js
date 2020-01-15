@@ -7,13 +7,13 @@ function fHora(){
     document.getElementById('txtHora').value = vHora;
     window.setTimeout('fHora()',1000);
 }
-function fFechaHora(){
+/* function fFechaHora(){
     vAno = vDate.getFullYear();
     vMes = ceroantes(vDate.getMonth() + 1);
     vDia = ceroantes(vDate.getDate());
     vFecha = vAno + "-" +vMes +"-"+ vDia;
     document.getElementById('txtHora').value = vFecha + " " + vHora;
-}
+} */
 
 function ceroantes(vNumero){
     return (vNumero < 10 ? '0' : '') + vNumero;

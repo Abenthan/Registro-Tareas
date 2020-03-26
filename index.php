@@ -13,8 +13,8 @@
     <?php
       include("conexion.php");
       $registros=$base->query("SELECT * FROM registrostareas WHERE horaFechaFin is null")->fetchAll(PDO::FETCH_OBJ);
-      $date = new DateTime();
-      if(isset($_POST["btnGuardartarea"])){
+        $date = new DateTime();
+/*      if(isset($_POST["btnGuardartarea"])){
         $hora=$date->format('Y-m-d H:i:s');
         $descripcion=$_POST["txtDescripcion"];
 
@@ -22,9 +22,9 @@
         $resultado=$base->prepare($sql);
         $resultado->execute(array(":hora"=>$hora, ":tarea"=>$descripcion));
 
-        header("Location:index.php");
+        //header("Location:index.php");
       }
-      
+*/      
     ?>
     <table>
       <?php foreach($registros as $tarea): ?>
@@ -44,12 +44,13 @@
 
     </table>
  
-    <form action="" method="post" class="formulario">
-      <input type="text" class="hora" id="txtHora">
+    <form action="EnviarTarea.php" method="post" class="formulario">
+      <input type="time" class="hora" id="txtHora" name="horaFecha" readonly>
       <input type="text" class="descripcion" 
         maxlength="100"
         placeholder="Descripcion de la tarea" 
-        name="txtDescripcion">
+        name="txtDescripcion"
+        id="txtDescripcion">
       <input type="submit" name="btnGuardartarea" value="Guardar Tarea">
     </form>
     <script src="tareas.js"></script>
